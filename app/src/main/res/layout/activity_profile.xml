@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.neighbour_list.ProfileActivity">
+
+    <ImageButton
+        android:id="@+id/profile_back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        app:srcCompat="?attr/actionModeCloseDrawable"
+        tools:layout_editor_absoluteX="23dp"
+        tools:layout_editor_absoluteY="14dp" />
+
+    <ImageView
+        android:id="@+id/profile_avatar"
+        android:layout_width="410dp"
+        android:layout_height="257dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_account"
+        tools:layout_editor_absoluteY="2dp" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/profile_favorite_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:srcCompat="@drawable/ic_star_border_white_24dp"
+        tools:layout_editor_absoluteX="333dp"
+        tools:layout_editor_absoluteY="230dp" />
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="404dp"
+        android:layout_height="304dp"
+        tools:layout_editor_absoluteX="3dp"
+        tools:layout_editor_absoluteY="284dp">
+
+        <TextView
+            android:id="@+id/profile_username_title"
+            android:layout_width="330dp"
+            android:layout_height="40dp"
+            android:autoText="false"
+            android:fontFamily="sans-serif-black"
+            android:text="Name"
+            tools:layout_editor_absoluteX="34dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <ImageView
+            android:id="@+id/profile_location_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="#FFFFFF"
+            app:srcCompat="@drawable/ic_baseline_location_on_24"
+            tools:layout_editor_absoluteX="34dp"
+            tools:layout_editor_absoluteY="94dp" />
+
+        <EditText
+            android:id="@+id/profile_location_text"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:ems="10"
+            android:inputType="textPostalAddress"
+            tools:layout_editor_absoluteX="112dp"
+            tools:layout_editor_absoluteY="94dp" />
+
+        <ImageView
+            android:id="@+id/profile_phone_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:srcCompat="@drawable/ic_baseline_phone_24"
+            tools:layout_editor_absoluteX="34dp"
+            tools:layout_editor_absoluteY="162dp" />
+
+        <EditText
+            android:id="@+id/profile_phone_text"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:ems="10"
+            android:inputType="phone"
+            tools:layout_editor_absoluteX="112dp"
+            tools:layout_editor_absoluteY="162dp" />
+
+        <ImageView
+            android:id="@+id/profile_account_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:srcCompat="@drawable/ic_baseline_language_24"
+            tools:layout_editor_absoluteX="34dp"
+            tools:layout_editor_absoluteY="226dp" />
+
+        <TextView
+            android:id="@+id/profile_account_text"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:text="TextView"
+            tools:layout_editor_absoluteX="112dp"
+            tools:layout_editor_absoluteY="226dp" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="400dp"
+        android:layout_height="250dp"
+        tools:layout_editor_absoluteX="5dp"
+        tools:layout_editor_absoluteY="594dp">
+
+        <TextView
+            android:id="@+id/profile_about_me_title"
+            android:layout_width="370dp"
+            android:layout_height="40dp"
+            android:text="TextView"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="27dp" />
+
+        <EditText
+            android:id="@+id/profile_about_me_text"
+            android:layout_width="370dp"
+            android:layout_height="130dp"
+            android:ems="10"
+            android:inputType="text"
+            android:text="Name"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="97dp" />
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.constraint.ConstraintLayout>
