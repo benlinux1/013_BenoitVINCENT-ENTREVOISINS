@@ -1,5 +1,8 @@
 package com.openclassrooms.entrevoisins.ui.neighbour_list;
 
+import android.content.Context;
+import android.content.Intent;
+import android.os.Parcelable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -51,6 +54,14 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
                 EventBus.getDefault().post(new DeleteNeighbourEvent(neighbour));
             }
         });
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View neighbourItem) {
+                Intent profileActivityIntent = new Intent(neighbourItem.getContext(), ProfileActivity.class);
+                neighbourItem.getContext().startActivity(profileActivityIntent);
+            }
+        });
     }
 
     @Override
@@ -66,9 +77,11 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
         @BindView(R.id.item_list_delete_button)
         public ImageButton mDeleteButton;
 
+
         public ViewHolder(View view) {
             super(view);
             ButterKnife.bind(this, view);
         }
     }
+
 }

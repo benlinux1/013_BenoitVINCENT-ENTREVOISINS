@@ -10,6 +10,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.openclassrooms.entrevoisins.R;
 import com.openclassrooms.entrevoisins.events.DeleteNeighbourEvent;
@@ -30,6 +33,7 @@ public class ListNeighbourActivity extends AppCompatActivity {
     @BindView(R.id.container)
     ViewPager mViewPager;
 
+
     ListNeighbourPagerAdapter mPagerAdapter;
 
     @Override
@@ -44,12 +48,6 @@ public class ListNeighbourActivity extends AppCompatActivity {
         mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(mTabLayout));
         mTabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
 
-    }
-
-    @OnClick(R.id.tabItem2)
-    public void goToFavorites() {
-        Intent FavoritesActivityIntent = new Intent(ListNeighbourActivity.this, FavoritesActivity.class);
-        startActivity(FavoritesActivityIntent);
     }
 
     @OnClick(R.id.add_neighbour)
