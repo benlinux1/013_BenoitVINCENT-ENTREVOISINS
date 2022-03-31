@@ -59,6 +59,7 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
             @Override
             public void onClick(View neighbourItem) {
                 Intent profileActivityIntent = new Intent(neighbourItem.getContext(), ProfileActivity.class);
+                profileActivityIntent.putExtra("NEIGHBOUR_ID", neighbour.getId());
                 neighbourItem.getContext().startActivity(profileActivityIntent);
             }
         });

@@ -27,4 +27,10 @@ public interface NeighbourApiService {
      * @param neighbour
      */
     void createNeighbour(Neighbour neighbour);
+
+    /**
+     * Get a specific neighbour's data
+     * @param id
+     */
+    Neighbour getNeighbour(long id);
 }
