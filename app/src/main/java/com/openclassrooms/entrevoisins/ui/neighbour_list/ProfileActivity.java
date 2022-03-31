@@ -65,8 +65,7 @@ public class ProfileActivity extends AppCompatActivity {
         mBackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent NeighbourActivityIntent = new Intent(ProfileActivity.this, ListNeighbourActivity.class);
-                startActivity(NeighbourActivityIntent);
+                finish();
             }
         });
 
