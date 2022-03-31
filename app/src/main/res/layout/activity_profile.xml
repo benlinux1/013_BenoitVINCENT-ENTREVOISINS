@@ -4,9 +4,153 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#ECECEC"
     android:visibility="visible"
     tools:context=".ui.neighbour_list.ProfileActivity">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/profile_information_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="22dp"
+        android:background="#FFFFFF"
+        android:elevation="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/profile_about_me_section"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_avatar_section">
+
+        <TextView
+            android:id="@+id/profile_neighbour_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="sans-serif-black"
+            android:textSize="18sp"
+            android:text="@string/tab_neighbour_title"
+            app:layout_constraintBottom_toTopOf="@+id/profile_location_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/profile_location_icon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/profile_phone_icon"
+            app:layout_constraintEnd_toStartOf="@+id/profile_location_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profile_neighbour_name"
+            app:srcCompat="@drawable/ic_baseline_location_on_24"
+            tools:ignore="ImageContrastCheck" />
+
+        <TextView
+            android:id="@+id/profile_location_text"
+            android:layout_width="320dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="12dp"
+            android:ems="10"
+            app:layout_constraintBottom_toBottomOf="@+id/profile_location_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/profile_location_icon"
+            app:layout_constraintTop_toTopOf="@+id/profile_location_icon" />
+
+        <ImageView
+            android:id="@+id/profile_phone_icon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/profile_account_icon"
+            app:layout_constraintEnd_toStartOf="@+id/profile_phone_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profile_location_icon"
+            app:srcCompat="@drawable/ic_baseline_phone_24" />
+
+        <TextView
+            android:id="@+id/profile_phone_text"
+            android:layout_width="320dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="12dp"
+            android:ems="10"
+            app:layout_constraintBottom_toTopOf="@+id/profile_phone_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/profile_phone_icon"
+            app:layout_constraintTop_toBottomOf="@+id/profile_phone_icon" />
+
+        <ImageView
+            android:id="@+id/profile_account_icon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/profile_phone_icon"
+            app:layout_constraintEnd_toStartOf="@+id/profile_social_account_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profile_phone_icon"
+            app:srcCompat="@drawable/ic_baseline_language_24" />
+
+        <TextView
+            android:id="@+id/profile_social_account_text"
+            android:layout_width="320dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="12dp"
+            app:layout_constraintBottom_toBottomOf="@+id/profile_account_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/profile_account_icon"
+            app:layout_constraintTop_toTopOf="@+id/profile_account_icon" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/profile_about_me_section"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:background="#FFFFFF"
+        android:elevation="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0.82">
+
+        <TextView
+            android:id="@+id/profile_about_me_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="sans-serif-black"
+            android:paddingStart="8dp"
+            android:paddingEnd="0dp"
+            android:textSize="18sp"
+            android:text="A propos de moi"
+            app:layout_constraintBottom_toTopOf="@+id/profile_about_me_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/profile_about_me_text"
+            android:layout_width="352dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:paddingBottom="4dp"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profile_about_me_title" />
+
+    </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/profile_avatar_section"
@@ -29,25 +173,26 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_account"
-            tools:layout_editor_absoluteY="0dp" />
+            tools:ignore="ImageContrastCheck" />
 
         <ImageButton
             android:id="@+id/profile_back_button"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:layout_marginStart="0dp"
             android:layout_marginTop="16dp"
             android:backgroundTint="#00FFFFFF"
-            android:contentDescription="Back-to-home-button"
+            android:contentDescription="@android:string/cancel"
             android:tint="#FFFFFF"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="?attr/actionModeCloseDrawable" />
+            app:srcCompat="?attr/actionModeCloseDrawable"
+            tools:ignore="ImageContrastCheck" />
 
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/profile_favorite_section"
+        android:elevation="4dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/profile_information_section"
@@ -56,173 +201,33 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/profile_favorite_background"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="340dp"
-            android:layout_marginTop="172dp"
-            android:contentDescription="Favorites_background"
-            app:backgroundTint="#FFFFFF"
+        <TextView
+            android:id="@+id/profile_title_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="150dp"
+            android:text="Name"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/floatingActionButton"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="320dp"
+            android:layout_marginTop="172dp"
+            android:backgroundTint="#FCFCFC"
+            android:contentDescription="@string/fab_transformation_sheet_behavior"
+            android:elevation="4dp"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_favorite_empty" />
-
-    </android.support.constraint.ConstraintLayout>
-
-    <android.support.constraint.ConstraintLayout
-        android:id="@+id/profile_information_section"
-        android:elevation="4dp"
-        android:layout_width="400dp"
-        android:layout_height="240dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginBottom="22dp"
-        android:background="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/profile_about_me_section"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile_avatar_section">
-
-        <TextView
-            android:id="@+id/profile_neighbour_name"
-            android:layout_width="370dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginBottom="16dp"
-            android:paddingLeft="10dp"
-            android:fontFamily="sans-serif-black"
-            android:text="Caroline"
-            app:layout_constraintBottom_toTopOf="@+id/profile_location_icon"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/profile_location_icon"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginBottom="16dp"
-            android:contentDescription="location-icon"
-            app:layout_constraintBottom_toTopOf="@+id/profile_phone_icon"
-            app:layout_constraintEnd_toStartOf="@+id/profile_location_text"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/profile_neighbour_name"
-            app:srcCompat="@drawable/ic_baseline_location_on_24" />
-
-        <TextView
-            android:id="@+id/profile_location_text"
-            android:layout_width="320dp"
-            android:layout_height="20dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="30dp"
-            android:ems="10"
-            android:text="Saint Pierre du Mont à 5km"
-            app:layout_constraintBottom_toBottomOf="@+id/profile_location_icon"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/profile_location_icon"
-            app:layout_constraintTop_toTopOf="@+id/profile_location_icon" />
-
-        <ImageView
-            android:id="@+id/profile_phone_icon"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginBottom="16dp"
-            app:layout_constraintBottom_toTopOf="@+id/profile_account_icon"
-            app:layout_constraintEnd_toStartOf="@+id/profile_phone_text"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/profile_location_icon"
-            app:srcCompat="@drawable/ic_baseline_phone_24" />
-
-        <TextView
-            android:id="@+id/profile_phone_text"
-            android:layout_width="320dp"
-            android:layout_height="20dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="30dp"
-            android:ems="10"
-            android:text="+33 6 86 57 90 14"
-            app:layout_constraintBottom_toTopOf="@+id/profile_phone_icon"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/profile_phone_icon"
-            app:layout_constraintTop_toBottomOf="@+id/profile_phone_icon" />
-
-        <ImageView
-            android:id="@+id/profile_account_icon"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginBottom="16dp"
-            android:contentDescription="social-account-icon"
-            app:layout_constraintBottom_toTopOf="@+id/profile_phone_icon"
-            app:layout_constraintEnd_toStartOf="@+id/profile_social_account_text"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/profile_phone_icon"
-            app:srcCompat="@drawable/ic_baseline_language_24" />
-
-        <TextView
-            android:id="@+id/profile_social_account_text"
-            android:layout_width="320dp"
-            android:layout_height="20dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="30dp"
-            android:text="www.facebook.fr/caroline"
-            app:layout_constraintBottom_toBottomOf="@+id/profile_account_icon"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/profile_account_icon"
-            app:layout_constraintTop_toTopOf="@+id/profile_account_icon" />
-
-    </android.support.constraint.ConstraintLayout>
-
-    <android.support.constraint.ConstraintLayout
-        android:id="@+id/profile_about_me_section"
-        android:elevation="4dp"
-        android:layout_width="392dp"
-        android:layout_height="200dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginEnd="12dp"
-        android:background="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_bias="0.82">
-
-        <TextView
-            android:id="@+id/profile_about_me_title"
-            android:layout_width="0dp"
-            android:layout_height="20dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="16dp"
-            android:fontFamily="sans-serif-black"
-            android:paddingLeft="8dp"
-            android:text="A propos de moi"
-            app:layout_constraintBottom_toTopOf="@+id/profile_about_me_text"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/profile_about_me_text"
-            android:layout_width="352dp"
-            android:layout_height="150dp"
-            android:layout_marginEnd="32dp"
-            android:paddingLeft="8dp"
-            android:ems="10"
-            android:text="Description"
-            android:textAlignment="textStart"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/profile_about_me_title" />
+            app:srcCompat="@drawable/ic_favorite_full" />
 
     </android.support.constraint.ConstraintLayout>
 

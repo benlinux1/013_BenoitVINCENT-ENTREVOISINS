@@ -22,6 +22,7 @@ public class ProfileActivity extends AppCompatActivity {
     Button mFavoriteButton;
     Boolean isFavorite;
     ImageView mNeighbourAvatar;
+    TextView mNeighbourNameTitle;
     TextView mNeighbourName;
     TextView mNeighbourLocation;
     TextView mNeighbourPhone;
@@ -44,6 +45,7 @@ public class ProfileActivity extends AppCompatActivity {
         // mFavoriteButton = findViewById(R.id.profile_favorite_button);
 
         mNeighbourAvatar = findViewById(R.id.profile_avatar);
+        mNeighbourNameTitle = findViewById(R.id.profile_title_name);
         mNeighbourName = findViewById(R.id.profile_neighbour_name);
         mNeighbourLocation = findViewById(R.id.profile_location_text);
         mNeighbourPhone = findViewById(R.id.profile_phone_text);
@@ -55,6 +57,7 @@ public class ProfileActivity extends AppCompatActivity {
                 .centerCrop()
                 .into(mNeighbourAvatar);
 
+        mNeighbourNameTitle.setText(neighbour.getName());
         mNeighbourName.setText(neighbour.getName());
         mNeighbourLocation.setText(neighbour.getAddress());
         mNeighbourPhone.setText(neighbour.getPhoneNumber());
