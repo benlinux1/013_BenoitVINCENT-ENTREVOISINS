@@ -7,11 +7,13 @@
     android:visibility="visible"
     tools:context=".ui.neighbour_list.ProfileActivity">
 
+
     <android.support.constraint.ConstraintLayout
         android:id="@+id/profile_information_section"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="12dp"
         android:layout_marginBottom="22dp"
         android:background="#FFFFFF"
@@ -29,8 +31,8 @@
             android:layout_marginTop="20dp"
             android:layout_marginBottom="16dp"
             android:fontFamily="sans-serif-black"
-            android:textSize="18sp"
             android:text="@string/tab_neighbour_title"
+            android:textSize="18sp"
             app:layout_constraintBottom_toTopOf="@+id/profile_location_icon"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -41,7 +43,7 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginStart="12dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="12dp"
             app:layout_constraintBottom_toTopOf="@+id/profile_phone_icon"
             app:layout_constraintEnd_toStartOf="@+id/profile_location_text"
             app:layout_constraintStart_toStartOf="parent"
@@ -130,8 +132,8 @@
             android:fontFamily="sans-serif-black"
             android:paddingStart="8dp"
             android:paddingEnd="0dp"
-            android:textSize="18sp"
             android:text="A propos de moi"
+            android:textSize="18sp"
             app:layout_constraintBottom_toTopOf="@+id/profile_about_me_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -155,9 +157,9 @@
     <android.support.constraint.ConstraintLayout
         android:id="@+id/profile_avatar_section"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginBottom="17dp"
+        android:layout_height="240dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
         app:layout_constraintBottom_toTopOf="@+id/profile_information_section"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -167,7 +169,7 @@
         <ImageView
             android:id="@+id/profile_avatar"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="240dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -177,11 +179,13 @@
 
         <ImageButton
             android:id="@+id/profile_back_button"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
             android:layout_marginTop="16dp"
             android:backgroundTint="#00FFFFFF"
             android:contentDescription="@android:string/cancel"
+            android:scaleX="1.25"
+            android:scaleY="1.25"
             android:tint="#FFFFFF"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -192,10 +196,10 @@
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/profile_favorite_section"
-        android:elevation="4dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/profile_information_section"
+        android:elevation="4dp"
+        app:layout_constraintBottom_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -206,7 +210,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
-            android:layout_marginTop="150dp"
+            android:layout_marginTop="440dp"
             android:text="Name"
             android:textColor="#FFFFFF"
             android:textSize="28sp"
@@ -216,18 +220,18 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <android.support.design.widget.FloatingActionButton
-            android:id="@+id/floatingActionButton"
+            android:id="@+id/profile_favorite_button"
             android:layout_width="56dp"
             android:layout_height="56dp"
             android:layout_marginStart="320dp"
-            android:layout_marginTop="172dp"
+            android:layout_marginTop="472dp"
             android:backgroundTint="#FCFCFC"
             android:contentDescription="@string/fab_transformation_sheet_behavior"
             android:elevation="4dp"
             android:visibility="visible"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_favorite_full" />
+            app:srcCompat="@drawable/ic_favorite_empty" />
 
     </android.support.constraint.ConstraintLayout>
 

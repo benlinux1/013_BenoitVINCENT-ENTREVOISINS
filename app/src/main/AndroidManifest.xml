@@ -16,9 +16,6 @@
             android:name=".ui.neighbour_list.ProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.neighbour_list.FavoritesActivity"
-            android:exported="false" />
-        <activity
             android:name=".ui.neighbour_list.AddNeighbourActivity"
             android:label="@string/activity_new_neighbour" />
         <activity

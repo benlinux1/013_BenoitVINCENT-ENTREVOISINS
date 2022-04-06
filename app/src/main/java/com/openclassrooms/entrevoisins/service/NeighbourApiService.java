@@ -32,5 +32,23 @@ public interface NeighbourApiService {
      * Get a specific neighbour's data
      * @param id
      */
-    Neighbour getNeighbour(long id);
+    Neighbour getNeighbourProfile(long id);
+
+    /**
+     * Get all my Favorites Neighbours
+     * @return {@link List}
+     */
+    List<Neighbour> getFavoritesList();
+
+    /**
+     * add a neighbour to Favorites List
+     * @param neighbour
+     */
+    void setFavorite(Neighbour neighbour);
+
+    /**
+     * Deletes a favorite neighbour
+     * @param neighbour
+     */
+    void deleteFavoriteNeighbour(Neighbour neighbour);
 }
