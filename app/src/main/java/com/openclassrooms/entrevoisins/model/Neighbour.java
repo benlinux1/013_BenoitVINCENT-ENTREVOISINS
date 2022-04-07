@@ -96,11 +96,7 @@ public class Neighbour {
 
     public boolean isFavorite() {
         return isFavorite;
-    }
-
-    public void setFavorite(boolean isFavorite) {
-        this.isFavorite = isFavorite;
-    }
+    } // Added to create Favorites List
 
     @Override
     public boolean equals(Object o) {

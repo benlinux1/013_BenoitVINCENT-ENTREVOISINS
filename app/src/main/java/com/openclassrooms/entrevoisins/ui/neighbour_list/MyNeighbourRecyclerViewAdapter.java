@@ -1,20 +1,28 @@
 package com.openclassrooms.entrevoisins.ui.neighbour_list;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.openclassrooms.entrevoisins.R;
+import com.openclassrooms.entrevoisins.di.DI;
+import com.openclassrooms.entrevoisins.events.DeleteFavoriteNeighbourEvent;
 import com.openclassrooms.entrevoisins.events.DeleteNeighbourEvent;
 import com.openclassrooms.entrevoisins.model.Neighbour;
+import com.openclassrooms.entrevoisins.service.NeighbourApiService;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -26,9 +34,11 @@ import butterknife.ButterKnife;
 public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeighbourRecyclerViewAdapter.ViewHolder> {
 
     private final List<Neighbour> mNeighbours;
+    private String actualPage;
 
-    public MyNeighbourRecyclerViewAdapter(List<Neighbour> items) {
+    public MyNeighbourRecyclerViewAdapter(List<Neighbour> items, String actualPage) {
         mNeighbours = items;
+        this.actualPage = actualPage; // necessary to switch actions between Neighbours / Favorites Page
     }
 
     @Override
@@ -47,13 +57,26 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
                 .apply(RequestOptions.circleCropTransform())
                 .into(holder.mNeighbourAvatar);
 
+        /**
+         * Modify Delete button's action according to Neighbours Page / Favorites Page
+         */
         holder.mDeleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EventBus.getDefault().post(new DeleteNeighbourEvent(neighbour));
+                if (actualPage.equals(NeighbourFragment.class.getName())) {
+                    EventBus.getDefault().post(new DeleteNeighbourEvent(neighbour));
+                } else if(actualPage.equals(FavoritesFragment.class.getName())) {
+                    EventBus.getDefault().post(new DeleteFavoriteNeighbourEvent(neighbour));
+                }
+                else {
+                    // Don't do anything, see for others pages in the future
+                }
             }
         });
 
+        /**
+         * Launch Profile Activity according to the Neighbour's Id
+         */
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View neighbourItem) {
@@ -63,6 +86,8 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
             }
         });
     }
+
+
 
     @Override
     public int getItemCount() {

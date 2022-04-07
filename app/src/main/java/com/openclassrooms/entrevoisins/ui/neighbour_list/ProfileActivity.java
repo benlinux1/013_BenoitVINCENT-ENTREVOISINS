@@ -22,16 +22,15 @@ import com.openclassrooms.entrevoisins.service.NeighbourApiService;
 
 public class ProfileActivity extends AppCompatActivity {
 
-    ImageButton mBackButton;
-    FloatingActionButton mFavoriteButton;
-    ImageView mNeighbourAvatar;
-    TextView mNeighbourNameTitle;
-    TextView mNeighbourName;
-    TextView mNeighbourLocation;
-    TextView mNeighbourPhone;
-    TextView mNeighbourSocialAccount;
-    TextView mNeighbourDescription;
-
+    private ImageButton mBackButton;
+    private FloatingActionButton mFavoriteButton;
+    private ImageView mNeighbourAvatar;
+    private TextView mNeighbourNameTitle;
+    private TextView mNeighbourName;
+    private TextView mNeighbourLocation;
+    private TextView mNeighbourPhone;
+    private TextView mNeighbourSocialAccount;
+    private TextView mNeighbourDescription;
     private NeighbourApiService mApiService;
 
     @Override
@@ -40,13 +39,18 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
         mApiService = DI.getNeighbourApiService();
 
+        /**
+         * Get Neighbour's informations from previous activity
+         */
         Intent getProfileIntent = getIntent();
         long id = getProfileIntent.getLongExtra("NEIGHBOUR_ID",-1);
         Neighbour neighbour = mApiService.getNeighbourProfile(id);
 
+        /**
+         * Set all neighbour's profile informations in the right fields
+         */
         mBackButton = findViewById(R.id.profile_back_button);
         mFavoriteButton = findViewById(R.id.profile_favorite_button);
-
         mNeighbourAvatar = findViewById(R.id.profile_avatar);
         mNeighbourNameTitle = findViewById(R.id.profile_title_name);
         mNeighbourName = findViewById(R.id.profile_neighbour_name);
@@ -89,11 +93,14 @@ public class ProfileActivity extends AppCompatActivity {
         });
 
         /**
-         * Listener on Favorite's Button add / remove neighbour from Favorites List
+         * Listener on Favorite's Button to add/remove neighbour in/from Favorites List
          * Modify the favorite's button design (empty / full) according to the situation too
          */
         mFavoriteButton.setOnClickListener(new View.OnClickListener() {
 
+            /**
+             * Display an alert dialog box for best user XP ;)
+             */
             public void createCustomDialogBox(String message) {
                 // Build an alert dialogBox
                 AlertDialog.Builder builder
@@ -125,19 +132,16 @@ public class ProfileActivity extends AppCompatActivity {
                 messageText.setGravity(Gravity.CENTER);
             }
 
-
             @Override
             public void onClick(View view) {
-
                 if (!mApiService.getFavoritesList().contains(neighbour)) {
                     mApiService.setFavorite(neighbour);
                     mFavoriteButton.setImageResource(R.drawable.ic_star_yellow_24);
-                    createCustomDialogBox("Ce voisin a bien été ajouté à vos favoris");
-
+                    createCustomDialogBox(neighbour.getName() + " a été ajouté(e) à vos favoris");
                 } else {
                     mApiService.deleteFavoriteNeighbour(neighbour);
                     mFavoriteButton.setImageResource(R.drawable.ic_favorite_empty);
-                    createCustomDialogBox("Ce voisin a été supprimé de vos favoris");
+                    createCustomDialogBox(neighbour.getName() + " a été supprimé de vos favoris");
                 }
             }
        });

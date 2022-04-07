@@ -10,6 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.openclassrooms.entrevoisins.R;
 import com.openclassrooms.entrevoisins.di.DI;
 import com.openclassrooms.entrevoisins.events.DeleteNeighbourEvent;
@@ -60,8 +62,9 @@ public class NeighbourFragment extends Fragment {
      */
     private void initList() {
         mNeighbours = mApiService.getNeighbours();
-        mRecyclerView.setAdapter(new MyNeighbourRecyclerViewAdapter(mNeighbours));
+        mRecyclerView.setAdapter(new MyNeighbourRecyclerViewAdapter(mNeighbours, this.getClass().getName()));
     }
+
 
     @Override
     public void onResume() {
@@ -82,7 +85,7 @@ public class NeighbourFragment extends Fragment {
     }
 
     /**
-     * Fired if the user clicks on a delete button
+     * Fired if the user clicks on a delete button in Neighbours List
      * @param event
      */
     @Subscribe

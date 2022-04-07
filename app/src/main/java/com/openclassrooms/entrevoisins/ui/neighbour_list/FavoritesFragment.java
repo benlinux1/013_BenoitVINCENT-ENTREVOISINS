@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 
 import com.openclassrooms.entrevoisins.R;
 import com.openclassrooms.entrevoisins.di.DI;
-import com.openclassrooms.entrevoisins.events.DeleteNeighbourEvent;
+import com.openclassrooms.entrevoisins.events.DeleteFavoriteNeighbourEvent;
 import com.openclassrooms.entrevoisins.model.Neighbour;
 import com.openclassrooms.entrevoisins.service.NeighbourApiService;
 
@@ -28,7 +28,6 @@ public class FavoritesFragment extends Fragment {
     private List<Neighbour> mFavoritesNeighbours;
     private RecyclerView mRecyclerView;
 
-
     /**
      * Create and return a new instance
      * @return @{@link FavoritesFragment}
@@ -38,12 +37,18 @@ public class FavoritesFragment extends Fragment {
         return fragment;
     }
 
+    /**
+     * Launch API Instance
+     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mApiService = DI.getNeighbourApiService();
     }
 
+    /**
+     * Create the Recycler View to display Favorites List
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -52,17 +57,16 @@ public class FavoritesFragment extends Fragment {
         mRecyclerView = (RecyclerView) view;
         mRecyclerView.setLayoutManager(new LinearLayoutManager(context));
         mRecyclerView.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL));
-
         initFavoritesList();
         return view;
     }
 
     /**
-     * Init the List of favorite neighbours
+     * Initialize the List of favorite neighbours
      */
-    private void initFavoritesList() { // TODO : add condition or method to save the LIST
+    private void initFavoritesList() {
         mFavoritesNeighbours = mApiService.getFavoritesList();
-        mRecyclerView.setAdapter(new MyNeighbourRecyclerViewAdapter(mFavoritesNeighbours));
+        mRecyclerView.setAdapter(new MyNeighbourRecyclerViewAdapter(mFavoritesNeighbours, this.getClass().getName()));
     }
 
     @Override
@@ -84,11 +88,11 @@ public class FavoritesFragment extends Fragment {
     }
 
     /**
-     * Fired if the user clicks on a delete button
+     * Fired if the user clicks on a delete button in the Favorites List
      * @param event
      */
     @Subscribe
-    public void onDeleteNeighbour(DeleteNeighbourEvent event) {
+    public void onDeleteFavoriteNeighbour(DeleteFavoriteNeighbourEvent event) {
         mApiService.deleteFavoriteNeighbour(event.neighbour);
         initFavoritesList();
     }
