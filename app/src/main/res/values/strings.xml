@@ -3,6 +3,12 @@
     <string name="tab_neighbour_title">My neighbours</string>
     <string name="tab_favorites_title">Favorites</string>
     <string name="activity_new_neighbour">New neighbour</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="Profile_name_main">Neighbour\'s name</string>
+    <string name="Profile_name_info">Neighbour\'s name</string>
+    <string name="Profile_location">Location</string>
+    <string name="Profile_phone_number">+33 1 23 45 67 89</string>
+    <string name="Profile_social_account">www.facebook/name</string>
+    <string name="Profile_about_me_title">A propos de moi</string>
+    <string name="Profile_about_me_description">Neighbour\'s description</string>
 </resources>

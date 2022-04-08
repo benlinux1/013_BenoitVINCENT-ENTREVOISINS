@@ -141,7 +141,7 @@ public class ProfileActivity extends AppCompatActivity {
                 } else {
                     mApiService.deleteFavoriteNeighbour(neighbour);
                     mFavoriteButton.setImageResource(R.drawable.ic_favorite_empty);
-                    createCustomDialogBox(neighbour.getName() + " a été supprimé de vos favoris");
+                    createCustomDialogBox(neighbour.getName() + " a été supprimé(e) de vos favoris");
                 }
             }
        });

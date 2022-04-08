@@ -14,6 +14,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.openclassrooms.entrevoisins.R;
 import com.openclassrooms.entrevoisins.di.DI;
+import com.openclassrooms.entrevoisins.events.DeleteFavoriteNeighbourEvent;
 import com.openclassrooms.entrevoisins.events.DeleteNeighbourEvent;
 import com.openclassrooms.entrevoisins.model.Neighbour;
 import com.openclassrooms.entrevoisins.service.NeighbourApiService;
@@ -29,7 +30,7 @@ public class NeighbourFragment extends Fragment {
     private NeighbourApiService mApiService;
     private List<Neighbour> mNeighbours;
     private RecyclerView mRecyclerView;
-
+    private List<Neighbour> mFavoritesNeighbours;
 
     /**
      * Create and return a new instance
@@ -64,7 +65,6 @@ public class NeighbourFragment extends Fragment {
         mNeighbours = mApiService.getNeighbours();
         mRecyclerView.setAdapter(new MyNeighbourRecyclerViewAdapter(mNeighbours, this.getClass().getName()));
     }
-
 
     @Override
     public void onResume() {
