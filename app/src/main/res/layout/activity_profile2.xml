@@ -61,34 +61,42 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+    </android.support.constraint.ConstraintLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profile_avatar_section"
+        android:layout_marginTop="-28dp"
+        android:orientation="horizontal">
+
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/profile_favorite_button"
             android:layout_width="56dp"
             android:layout_height="56dp"
-            android:layout_alignParentEnd="false"
-            android:layout_marginEnd="20dp"
             android:backgroundTint="#FCFCFC"
-            android:contentDescription="@string/fab_transformation_sheet_behavior"
-            android:elevation="8dp"
-            android:visibility="visible"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/profile_avatar"
-            app:srcCompat="@drawable/ic_favorite_empty"
-            tools:visibility="visible" />
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="false"
+            android:layout_marginEnd="16dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/ic_favorite_empty"
+            app:elevation="12dp" />
 
-    </android.support.constraint.ConstraintLayout>
+    </RelativeLayout>
 
     <!-- Details Section -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="-28dp"
         android:layout_marginStart="12dp"
         android:layout_marginEnd="12dp"
         android:orientation="vertical">
 
         <!-- Neighbour's Information Section -->
         <LinearLayout
+            android:id="@id/profile_information_section"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
