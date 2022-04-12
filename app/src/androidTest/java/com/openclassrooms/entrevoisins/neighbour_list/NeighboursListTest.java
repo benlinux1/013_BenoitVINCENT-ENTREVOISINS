@@ -8,6 +8,8 @@ import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
 import com.openclassrooms.entrevoisins.R;
+import com.openclassrooms.entrevoisins.di.DI;
+import com.openclassrooms.entrevoisins.model.Neighbour;
 import com.openclassrooms.entrevoisins.ui.neighbour_list.ListNeighbourActivity;
 import com.openclassrooms.entrevoisins.utils.DeleteViewAction;
 
@@ -27,9 +29,9 @@ import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.isRoot;
 import static android.support.test.espresso.matcher.ViewMatchers.withChild;
+import static android.support.test.espresso.matcher.ViewMatchers.withContentDescription;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
-import static android.support.test.espresso.matcher.ViewMatchers.withResourceName;
-import static android.support.test.espresso.matcher.ViewMatchers.withTagKey;
+import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static com.openclassrooms.entrevoisins.utils.RecyclerViewItemCountAssertion.withItemCount;
 import static org.hamcrest.core.IsNull.notNullValue;
 
@@ -72,38 +74,13 @@ public class NeighboursListTest {
      */
     @Test
     public void myNeighboursList_deleteNeighbourAction_shouldRemoveItem() {
-        // Check neighbours list count (12)
+        // Check neighbours list count (actual is 12)
         onView(ViewMatchers.withId(R.id.list_neighbours)).check(withItemCount(ITEMS_COUNT));
         // When perform a click on a delete icon
         onView(ViewMatchers.withId(R.id.list_neighbours))
                 .perform(RecyclerViewActions.actionOnItemAtPosition(1, new DeleteViewAction()));
-        // Then : check if item was deleted in the list (11)
+        // Then : check if item was deleted in the list (new is 11)
         onView(ViewMatchers.withId(R.id.list_neighbours)).check(withItemCount(ITEMS_COUNT-1));
-        onView(ViewMatchers.withId(R.id.list_neighbours)).check(withItemCount(ITEMS_COUNT=11));
-    }
-
-    /**
-     * When we add a neighbour, the item is in the neighbours list
-     */
-    @Test
-    public void myNeighboursList_addingNewNeighbourAction_shouldAddItem() {
-        // Check neighbours list count (12)
-        onView(withId(R.id.list_neighbours)).check(withItemCount(ITEMS_COUNT));
-        // Click on the creation button to add a new neighbour
-        onView(withId(R.id.add_neighbour))
-                .perform(click());
-        // Click on the name field
-        onView(withId(R.id.name))
-                .perform(click());
-        // Enter neighbour's name
-        onView(withId(R.id.name))
-                .perform(typeText("New_Neighbour"), closeSoftKeyboard());
-        // Click on the creation button to add this new neighbour
-        onView(withId(R.id.create))
-                .perform(click());
-        // Then : check if item was added to the list (13)
-        onView(withId(R.id.list_neighbours)).check(withItemCount(ITEMS_COUNT+1));
-        onView(withId(R.id.list_neighbours)).check(withItemCount(ITEMS_COUNT=13));
     }
 
     /**
@@ -118,6 +95,21 @@ public class NeighboursListTest {
         onView(withId(R.id.profile_page)).check(matches(isDisplayed()));
     }
 
+    /**
+     * When we click on a neighbour in the list, the neighbour's data is displayed in profile's page
+     */
+    @Test
+    public void myNeighboursList_clickOnNeighbourAction_shouldDisplayNeighbourDataInProfileView() {
+        // Click on the fifth item in the neighbour list
+        onView(withId(R.id.list_neighbours))
+                .perform(RecyclerViewActions.actionOnItemAtPosition(4, click()));
+        // Check if neighbour's data is displayed on his profile's page
+        Neighbour neighbourPosition = DI.getNeighbourApiService().getNeighbours().get(4);
+        onView(withId(R.id.profile_title_name)).check(matches(withText(neighbourPosition.getName())));
+        onView(withId(R.id.profile_location_text)).check(matches(withText(neighbourPosition.getAddress())));
+        onView(withId(R.id.profile_phone_text)).check(matches(withText(neighbourPosition.getPhoneNumber())));
+        onView(withId(R.id.profile_about_me_text)).check(matches(withText(neighbourPosition.getAboutMe())));
+    }
 
     /**
      * When we add a neighbour to favorites with dedicated button, the item is in the favorites list
@@ -142,10 +134,27 @@ public class NeighboursListTest {
     }
 
     /**
-     * When we delete a neighbour which was in favorites tab, neighbour is deleted from both lists (global & favorite)
+     * When we click on the favorites tab, the favorites list is opened
      */
     @Test
-    public void myNeighboursList_deleteNeighbourSetInFavorites_shouldDeleteNeighbourFromAllLists() {
-
+    public void myNeighboursList_clickOnDeleteNeighbourAddedInFavorites_shouldDeleteInFavoritesListToo() {
+        // Click on the third item in the neighbour list
+        onView(withId(R.id.list_neighbours))
+                .perform(RecyclerViewActions.actionOnItemAtPosition(2, click()));
+        // Click on the adding to favorites button to add this neighbour to favorites (actual count = 2)
+        onView(withId(R.id.profile_favorite_button))
+                .perform(click());
+        // Close AlertDialog Window
+        onView(isRoot()).perform( ViewActions.pressBack());
+        // Go back on neighbours list view and to favorites list view
+        onView(withId(R.id.profile_back_button))
+                .perform(click());
+        // Then : check the number of favorites is 1
+        onView(withId(R.id.list_favorites)).check(withItemCount(1));
+        // When perform a click on the delete icon of THIS neighbour
+        onView(ViewMatchers.withId(R.id.list_neighbours))
+                .perform(RecyclerViewActions.actionOnItemAtPosition(2, new DeleteViewAction()));
+        // Then : check if item was deleted in the favorites list (actual is 1)
+        onView(ViewMatchers.withId(R.id.list_favorites)).check(withItemCount(0));
     }
 }
