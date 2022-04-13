@@ -1,7 +1,8 @@
 ![da-android-entrevoisins](https://user-images.githubusercontent.com/78255467/163183018-566703a3-5664-4a5d-98d9-cf74f8c226cd.svg)
 ![#p3-openclassrooms](https://user-images.githubusercontent.com/78255467/163183381-1d65bd4d-8feb-45cf-bd53-95e4e82921d5.svg)
 
-# VERSION FRANCAISE (English translation in 2nd part of the documentation below)
+# VERSION FRANCAISE
+(English translation in the 2nd part of the documentation below)
 
 # Entrevoisins
 
@@ -56,8 +57,11 @@ Notre équipe : BenLinux & FranckBlack
 
 ============================================================================================
 
+![da-android-entrevoisins](https://user-images.githubusercontent.com/78255467/163183018-566703a3-5664-4a5d-98d9-cf74f8c226cd.svg)
+![#p3-openclassrooms](https://user-images.githubusercontent.com/78255467/163183381-1d65bd4d-8feb-45cf-bd53-95e4e82921d5.svg)
 
-# ENGLISH VERSION (version française en 1ère partie de la documentation)
+# ENGLISH VERSION
+(version française en 1ère partie de la documentation)
 
 # Entrevoisins
 
