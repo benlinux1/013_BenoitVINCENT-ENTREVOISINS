@@ -36,7 +36,7 @@ public class ProfileActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile2);
+        setContentView(R.layout.activity_profile);
         mApiService = DI.getNeighbourApiService();
 
         /**

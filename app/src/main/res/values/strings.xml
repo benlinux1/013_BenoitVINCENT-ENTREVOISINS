@@ -11,4 +11,5 @@
     <string name="Profile_social_account">www.facebook/name</string>
     <string name="Profile_about_me_title">A propos de moi</string>
     <string name="Profile_about_me_description">Neighbour\'s description</string>
+    <string name="Add_to_favorite_button">+</string>
 </resources>
