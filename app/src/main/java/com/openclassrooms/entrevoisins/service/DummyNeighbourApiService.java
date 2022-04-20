@@ -70,12 +70,16 @@ public class DummyNeighbourApiService implements NeighbourApiService {
     }
 
     /**
-     * Add a neighbour to favorites List
+     * Set / unset neighbour in / from favorites list
      * {@param neighbour}
      */
     @Override
-    public void setFavorite(Neighbour neighbour) {
-        favoritesList.add(neighbour);
+    public void toggleFavorite(Neighbour neighbour) {
+        if (neighbour.isFavorite()) {
+            neighbour.setFavorite(false);
+        } else {
+            neighbour.setFavorite(true);
+        }
     }
 
     /**
