@@ -41,14 +41,9 @@ public interface NeighbourApiService {
     List<Neighbour> getFavoritesList();
 
     /**
-     * add a neighbour to Favorites List
+     * Set / unset neighbour in / from favorites list
      * @param neighbour
      */
-    void setFavorite(Neighbour neighbour);
+    void toggleFavorite(Neighbour neighbour);
 
-    /**
-     * Deletes a favorite neighbour
-     * @param neighbour
-     */
-    void deleteFavoriteNeighbour(Neighbour neighbour);
 }

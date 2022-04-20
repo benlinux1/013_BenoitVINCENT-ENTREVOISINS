@@ -94,9 +94,15 @@ public class Neighbour {
         this.aboutMe = aboutMe;
     }
 
+    // Added to create Favorites List
     public boolean isFavorite() {
         return isFavorite;
-    } // Added to create Favorites List
+    }
+
+    // Added to set isFavorite param
+    public void setFavorite(boolean favorite) {
+        this.isFavorite = favorite;
+    }
 
     @Override
     public boolean equals(Object o) {

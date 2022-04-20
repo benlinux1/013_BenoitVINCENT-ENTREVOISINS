@@ -57,7 +57,7 @@ public class NeighbourServiceTest {
         // Take the first neighbour in the global list
         Neighbour neighbourToAddToFavorites = service.getNeighbours().get( 0 );
         // Call method to set neighbour in favorites list
-        service.setFavorite(neighbourToAddToFavorites);
+        service.toggleFavorite(neighbourToAddToFavorites);
         // Check if neighbour is in the favorites list and stay in global list
         assertTrue(service.getFavoritesList().contains(neighbourToAddToFavorites));
         assertTrue(service.getNeighbours().contains(neighbourToAddToFavorites));
@@ -68,9 +68,9 @@ public class NeighbourServiceTest {
         // Take the first neighbour in global list
         Neighbour neighbourToDeleteFromFavorites = service.getNeighbours().get( 0 );
         // Call method to set neighbour in favorites list
-        service.setFavorite(neighbourToDeleteFromFavorites);
+        service.toggleFavorite(neighbourToDeleteFromFavorites);
         // Call reverse method to delete neighbour from favorites list
-        service.deleteFavoriteNeighbour(neighbourToDeleteFromFavorites);
+        service.toggleFavorite(neighbourToDeleteFromFavorites);
         // Check if neighbour is removed from the favorites list BUT is still in global list
         assertFalse(service.getFavoritesList().contains(neighbourToDeleteFromFavorites));
         assertTrue(service.getNeighbours().contains(neighbourToDeleteFromFavorites));
@@ -81,9 +81,9 @@ public class NeighbourServiceTest {
         // Take the first neighbour in global list
         Neighbour neighbourToDeleteFromApi = service.getNeighbours().get( 0 );
         // Call method to set neighbour in favorites list
-        service.setFavorite(neighbourToDeleteFromApi);
+        service.toggleFavorite(neighbourToDeleteFromApi);
         // Call reverse method to delete neighbour from favorites list
-        service.deleteNeighbour(neighbourToDeleteFromApi);
+        service.toggleFavorite(neighbourToDeleteFromApi);
         // Check if neighbour is removed from the favorites list AND from  global list
         assertFalse(service.getFavoritesList().contains(neighbourToDeleteFromApi));
         assertFalse(service.getNeighbours().contains(neighbourToDeleteFromApi));

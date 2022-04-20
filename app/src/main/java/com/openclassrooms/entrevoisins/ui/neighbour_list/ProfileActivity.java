@@ -134,15 +134,14 @@ public class ProfileActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                if (!mApiService.getFavoritesList().contains(neighbour)) {
-                    mApiService.setFavorite(neighbour);
+                if (!neighbour.isFavorite()) {
                     mFavoriteButton.setImageResource(R.drawable.ic_star_yellow_24);
                     createCustomDialogBox(neighbour.getName() + " a été ajouté(e) à vos favoris");
                 } else {
-                    mApiService.deleteFavoriteNeighbour(neighbour);
                     mFavoriteButton.setImageResource(R.drawable.ic_favorite_empty);
                     createCustomDialogBox(neighbour.getName() + " a été supprimé(e) de vos favoris");
                 }
+                mApiService.toggleFavorite(neighbour);
             }
        });
     }
