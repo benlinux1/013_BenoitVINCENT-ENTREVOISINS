@@ -72,17 +72,6 @@ public class ProfileActivity extends AppCompatActivity {
         mNeighbourDescription.setText(neighbour.getAboutMe());
 
         /**
-         * Condition that check if neignhour is in the favorites List
-         * Modify the favorite's button design (empty / full) according to the situation
-         * */
-        if (mApiService.getFavoritesList().contains(neighbour) == false) {
-            mFavoriteButton.setImageResource(R.drawable.ic_favorite_empty);
-        } else {
-            mFavoriteButton.setImageResource(R.drawable.ic_star_yellow_24);
-        }
-
-
-        /**
          * Listener on Back Button to close profile's page
          */
         mBackButton.setOnClickListener(new View.OnClickListener() {
@@ -132,15 +121,15 @@ public class ProfileActivity extends AppCompatActivity {
                 messageText.setGravity(Gravity.CENTER);
             }
 
+            /**
+             * Toggle the favorite's button design (empty / full) according to the situation
+             * Toggle alertDialog Box according to the situation
+             * Toggle neighbour's favorite attribute
+             * */
             @Override
             public void onClick(View view) {
-                if (!neighbour.isFavorite()) {
-                    mFavoriteButton.setImageResource(R.drawable.ic_star_yellow_24);
-                    createCustomDialogBox(neighbour.getName() + " a été ajouté(e) à vos favoris");
-                } else {
-                    mFavoriteButton.setImageResource(R.drawable.ic_favorite_empty);
-                    createCustomDialogBox(neighbour.getName() + " a été supprimé(e) de vos favoris");
-                }
+                mFavoriteButton.setImageResource(!neighbour.isFavorite()?R.drawable.ic_star_yellow_24 : R.drawable.ic_favorite_empty);
+                createCustomDialogBox(!neighbour.isFavorite()?neighbour.getName() + " a été ajouté(e) à vos favoris" : neighbour.getName() + " a été supprimé(e) de vos favoris");
                 mApiService.toggleFavorite(neighbour);
             }
        });
