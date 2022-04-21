@@ -127,7 +127,7 @@ public class ProfileActivity extends AppCompatActivity {
             /**
              * Toggle neighbour's favorite attribute
              * Toggle the favorite's button design (empty / full) according to the situation
-             * Display alertDialog Box according to the situation
+             * Displays alertDialog Box according to the situation
              * */
             @Override
             public void onClick(View view) {
