@@ -71,6 +71,9 @@ public class ProfileActivity extends AppCompatActivity {
         mNeighbourSocialAccount.setText("www.facebook.com/" + neighbour.getName());
         mNeighbourDescription.setText(neighbour.getAboutMe());
 
+        // Set Favorite Button color according to the situation
+        mFavoriteButton.setImageResource(neighbour.isFavorite()?R.drawable.ic_star_yellow_24 : R.drawable.ic_favorite_empty);
+
         /**
          * Listener on Back Button to close profile's page
          */
@@ -122,15 +125,15 @@ public class ProfileActivity extends AppCompatActivity {
             }
 
             /**
-             * Toggle the favorite's button design (empty / full) according to the situation
-             * Toggle alertDialog Box according to the situation
              * Toggle neighbour's favorite attribute
+             * Toggle the favorite's button design (empty / full) according to the situation
+             * Display alertDialog Box according to the situation
              * */
             @Override
             public void onClick(View view) {
-                mFavoriteButton.setImageResource(!neighbour.isFavorite()?R.drawable.ic_star_yellow_24 : R.drawable.ic_favorite_empty);
-                createCustomDialogBox(!neighbour.isFavorite()?neighbour.getName() + " a été ajouté(e) à vos favoris" : neighbour.getName() + " a été supprimé(e) de vos favoris");
                 mApiService.toggleFavorite(neighbour);
+                mFavoriteButton.setImageResource(neighbour.isFavorite()?R.drawable.ic_star_yellow_24 : R.drawable.ic_favorite_empty);
+                createCustomDialogBox(neighbour.isFavorite()?neighbour.getName() + " a été ajouté(e) à vos favoris" : neighbour.getName() + " a été supprimé(e) de vos favoris");
             }
        });
     }
