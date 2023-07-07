@@ -7,7 +7,7 @@
 
 # Entrevoisins
 
-Ce dépôt contient une mini-application pour le P3 du parcours **DA ANDROID**, intitulée Entrevoisins.
+Ce dépôt contient une mini-application pour le P3 du parcours **DA ANDROID**, intitulée **Entrevoisins**.
 
 ## Technologies
 - 100% JAVA, ce projet a été réalisé à partir de l'IDE Android Studio.
@@ -15,7 +15,7 @@ Ce dépôt contient une mini-application pour le P3 du parcours **DA ANDROID**, 
 ## Installation
 - Ouvrez votre IDE préféré (ici Android Studio)
 - Ouvrez un nouveau projet et choississez "Get From Version Control"
-- Clonez l'application en copiant / collant ce lien : https://github.com/benlinux1/DA_ANDROID_ENTREVOISINS.git
+- Clonez l'application en copiant / collant ce lien : https://github.com/benlinux1/013_BenoitVINCENT-ENTREVOISINS.git
 - Spécifiez un dossier de destination sur votre ordinateur et cliquez sur "clone"
 - Voici les étapes en images :
 
@@ -75,7 +75,7 @@ This repository contains a mini app for the **DA Android** 3rd projet, untiltled
 ## Install
 - Open your favorite IDE (here Android Studio)
 - Open a new project and choose "Get From Version Control" option
-- Clone the app by copying / pasting this repository link : https://github.com/benlinux1/DA_ANDROID_ENTREVOISINS.git
+- Clone the app by copying / pasting this repository link : https://github.com/benlinux1/013_BenoitVINCENT-ENTREVOISINS.git
 - Specify a destination folder name on your computer and click "clone"
 - Here are the steps to illustrate in pictures :
 
