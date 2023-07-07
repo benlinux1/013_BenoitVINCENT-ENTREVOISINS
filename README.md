@@ -1,4 +1,5 @@
-![benoit-vincent-entrevoisins](https://github.com/benlinux1/013_BenoitVINCENT-ENTREVOISINS/assets/78255467/2c76b7e6-3a4b-4bab-9437-83a28cbcc7a6)![android-100_-java](https://github.com/benlinux1/013_BenoitVINCENT-ENTREVOISINS/assets/78255467/e9887d3b-3d60-4e02-abf2-20ead86a8386)
+![benoit-vincent-entrevoisins](https://github.com/benlinux1/013_BenoitVINCENT-ENTREVOISINS/assets/78255467/2c76b7e6-3a4b-4bab-9437-83a28cbcc7a6)
+![android-100_-java](https://github.com/benlinux1/013_BenoitVINCENT-ENTREVOISINS/assets/78255467/e9887d3b-3d60-4e02-abf2-20ead86a8386)
 
 
 # VERSION FRANCAISE
@@ -57,8 +58,9 @@ Notre équipe : BenLinux & FranckBlack
 
 ============================================================================================
 
-![da-android-entrevoisins](https://user-images.githubusercontent.com/78255467/163183018-566703a3-5664-4a5d-98d9-cf74f8c226cd.svg)
-![#p3-openclassrooms](https://user-images.githubusercontent.com/78255467/163183381-1d65bd4d-8feb-45cf-bd53-95e4e82921d5.svg)
+![benoit-vincent-entrevoisins](https://github.com/benlinux1/013_BenoitVINCENT-ENTREVOISINS/assets/78255467/2c76b7e6-3a4b-4bab-9437-83a28cbcc7a6)
+![android-100_-java](https://github.com/benlinux1/013_BenoitVINCENT-ENTREVOISINS/assets/78255467/e9887d3b-3d60-4e02-abf2-20ead86a8386)
+
 
 # ENGLISH VERSION
 (version française en 1ère partie de la documentation)
