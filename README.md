@@ -1,6 +1,4 @@
-![benoit-vincent-entrevoisins](https://github.com/benlinux1/013_BenoitVINCENT-ENTREVOISINS/assets/78255467/2c76b7e6-3a4b-4bab-9437-83a28cbcc7a6)
-![android-100_-java](https://github.com/benlinux1/013_BenoitVINCENT-ENTREVOISINS/assets/78255467/e9887d3b-3d60-4e02-abf2-20ead86a8386)
-
+![benoit-vincent-entre-voisins](https://github.com/benlinux1/013_BenoitVINCENT-ENTREVOISINS/assets/78255467/40ab4f1d-de90-461c-85ab-f55913d437c7)![android-app-100_-java](https://github.com/benlinux1/013_BenoitVINCENT-ENTREVOISINS/assets/78255467/149d3ea6-2a40-49e8-a7cc-a8cabab1f251)
 
 # VERSION FRANCAISE
 (English translation in the 2nd part of the documentation below)
@@ -58,8 +56,7 @@ Notre équipe : BenLinux & FranckBlack
 
 ============================================================================================
 
-![benoit-vincent-entrevoisins](https://github.com/benlinux1/013_BenoitVINCENT-ENTREVOISINS/assets/78255467/2c76b7e6-3a4b-4bab-9437-83a28cbcc7a6)
-![android-100_-java](https://github.com/benlinux1/013_BenoitVINCENT-ENTREVOISINS/assets/78255467/e9887d3b-3d60-4e02-abf2-20ead86a8386)
+![benoit-vincent-entre-voisins](https://github.com/benlinux1/013_BenoitVINCENT-ENTREVOISINS/assets/78255467/40ab4f1d-de90-461c-85ab-f55913d437c7)![android-app-100_-java](https://github.com/benlinux1/013_BenoitVINCENT-ENTREVOISINS/assets/78255467/149d3ea6-2a40-49e8-a7cc-a8cabab1f251)
 
 
 # ENGLISH VERSION
