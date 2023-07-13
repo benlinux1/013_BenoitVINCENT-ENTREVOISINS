@@ -7,7 +7,7 @@
 
 Ce dépôt contient une mini-application Android intitulée **Entrevoisins**.
 
-Il s'agissait ici de créer une **application communautaire**, permettant des échanges entre les voisins inscrits.
+Il s'agissait ici de concevoir une **application communautaire**, permettant à l'avenir des échanges entre les voisins inscrits.
 
 ## Technologies
 - **100% JAVA**, ce projet a été réalisé à partir de l'IDE Android Studio.
@@ -72,7 +72,7 @@ Notre équipe : BenLinux & FranckBlack
 
 This repository contains a mini Android app untiltled **Entrevoisins**.
 
-The aim here was to create a **community application**, allowing exchanges between registered neighbors.
+The aim here was to create a **community application**, allowing exchanges between registered neighbors in the future.
 
 ## Technologies
 - **100% JAVA**, this project was made with Android Studio IDE.
