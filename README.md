@@ -5,13 +5,13 @@
 
 # Entrevoisins
 
-Ce dépôt contient une mini-application pour le P3 du parcours **DA ANDROID**, intitulée **Entrevoisins**.
+Ce dépôt contient une mini-application Android intitulée **Entrevoisins**.
 
 ## Technologies
-- 100% JAVA, ce projet a été réalisé à partir de l'IDE Android Studio.
+- **100% JAVA**, ce projet a été réalisé à partir de l'IDE Android Studio.
 
 
-## Fonctionnalités
+## Objectifs et fonctionnalités
 
 Cette applcation vous permet de/d' :
 
@@ -68,13 +68,13 @@ Notre équipe : BenLinux & FranckBlack
 
 # Entrevoisins
 
-This repository contains a mini app for the **DA Android** 3rd projet, untiltled **Entrevoisins**
+This repository contains a mini Android app untiltled **Entrevoisins**.
 
 ## Technologies
-- 100% JAVA, this project was made with Android Studio IDE.
+- **100% JAVA**, this project was made with Android Studio IDE.
 
 
-## Features
+## Objectives and features
 
 This app allow you to :
 
@@ -98,7 +98,7 @@ This app allow you to :
 
 ![Sans titre-1](https://user-images.githubusercontent.com/78255467/163190059-da88648f-1973-478d-bb77-b718449825a3.png)
 
-Next the app will compile in Android Studio
+Next the app will compile in Android Studio.
 
 
 ## Use / How to launch app
